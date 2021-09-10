@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: operator-web
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.200.128:8848
+      config:
+        server-addr: 192.168.200.128:8848
+        file-extension: yml #指定文件扩展名，默认为properties
+        prefix: operator-web
+        #添加共享配置的dataId,如多个使用逗号分隔，并且越靠后，优先级越高
+        #文件后缀名不能少，只支持yaml，yml，properies
+        shared-dataids: common.yml
+        #哪些共享配置支持动态刷新，如多个使用逗号分隔
+        refreshable-dataids: common.yml
+  profiles:
+    active: dev
+server:
+  port: 8083
+
+
