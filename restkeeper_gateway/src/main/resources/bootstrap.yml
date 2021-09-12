@@ -7,9 +7,9 @@ spring:
     # 使用 Naoos 作为服务注册发现
     nacos:
       discovery:
-        server-addr: 192.168.200.128:8848
+        server-addr: 47.97.7.212:8848
       config:
-        server-addr: 192.168.200.128:8848
+        server-addr: 47.97.7.212:8848
         file-extension: yml
         prefix: gateway
 server:
