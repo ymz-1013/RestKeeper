@@ -14,17 +14,26 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 public class OperatorUserTest {
 
-    @Reference(version = "1.0.0",check = false)
+//    @Reference(version = "1.0.0",check = false)
+//    private IOperatorUserService operatorUserService;
+    @Reference(version = "1.0.0", check = false)
     private IOperatorUserService operatorUserService;
+
+
 
     //新增用户
     @Test
     @Rollback(false)
     public void addTest(){
         OperatorUser operatorUser = new OperatorUser();
-        operatorUser.setLoginname("wangwu");
-        String crypt = Md5Crypt.md5Crypt("123456".getBytes());
-        operatorUser.setLoginpass(crypt);
+        operatorUser.setLoginname("zhangsan");
+        String md5Crypt = Md5Crypt.md5Crypt("root".getBytes());
+        operatorUser.setLoginpass(md5Crypt);
         operatorUserService.save(operatorUser);
+//        OperatorUser operatorUser = new OperatorUser();
+//        operatorUser.setLoginname("wangwu");
+//        String crypt = Md5Crypt.md5Crypt("123456".getBytes());
+//        operatorUser.setLoginpass(crypt);
+//        operatorUserService.save(operatorUser);
     }
 }
