@@ -71,7 +71,6 @@ public class UserController {
                                            @PathVariable("pageSize") int pageSize,
                                            @RequestParam(name = "name", required = false) String name) {
         IPage<OperatorUser> page = operatorUserService.queryPageByName(pageNum, pageSize, name);
-        int i = 1/0;
         PageVO<OperatorUser> pageVO = new PageVO<>(page);
         return pageVO;
 
